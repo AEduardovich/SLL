@@ -43,7 +43,7 @@ class llist {
         Node *h = head;
         Node *p = NULL;
 
-        if(n > 1) {
+        if(n <= 1) {
             return NULL;
         }
         else {
@@ -64,6 +64,7 @@ class llist {
             cout << tmp->data <<"\n";
             tmp = tmp->next;
         }
+        cout << "NULL";
     }
 };
 
