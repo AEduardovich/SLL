@@ -9,7 +9,7 @@ struct Node {
     Node *next;
 };
 
-int display(struct Node* head) {
+void display(struct Node* head) {
     if(head == NULL) {
         printf("NULL\n");
     }
