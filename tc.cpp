@@ -33,7 +33,6 @@ void concat(struct Node *x, struct Node *y) {
 
 
 int main() {
-
     struct Node *prev, *x, *y, *tmp;
     int s,i;
     printf("declare the X list:");
