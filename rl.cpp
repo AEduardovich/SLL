@@ -56,7 +56,7 @@ class Solution
 public:
     ListNode *rotateList(struct ListNode **head, int k)
     {
-        //Написать хэндлер для 0 <= k <= 2 * 10^9;
+        //0 <= k <= 2 * 10^9;
         ListNode *prev = NULL, *last = *head;
         int iter = simplify(k);
         while (iter > 0)
