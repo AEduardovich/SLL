@@ -25,10 +25,9 @@ int simplify(int v)
     int len = to_str(v).size();
     int num[len];
 
-    int val = v / 10;
-    int total = v / val;
+    int c = 0;
 
-    int mod = v % 10;
+    int mod = 0;
     int ans = 0;
     int tmp = 0;
 
@@ -36,16 +35,28 @@ int simplify(int v)
     {
         num[i] = to_str(v)[i] - '0';
     }
-
-    if (mod == 0)
+    for (int j = 0; j < len; ++j)
     {
-        ans = total;
+        if (num[j] == 0)
+        {
+            c++;
+        }
     }
-    else
+
+    int cost = 0;
+    if (len - c >= 1)
+    {
+        cost = len - c;
+    }
+    if (cost == 1)
+    {
+        ans = num[0] * 10;
+    }
+    if (cost > 1)
     {
         for (int i = 1; i < len; ++i)
             tmp += num[i];
-        ans = num[0] * 10 + tmp;
+            ans = num[0] * 10 + tmp;
     }
 
     return ans;
@@ -56,7 +67,7 @@ class Solution
 public:
     ListNode *rotateList(struct ListNode **head, int k)
     {
-        //Написать хэндлер для 0 <= k <= 2 * 10^9;
+        //0 <= k <= 2 * 10^9;
         ListNode *prev = NULL, *last = *head;
         int iter = simplify(k);
         while (iter > 0)
