@@ -45,7 +45,7 @@ int simplify(int v)
     {
         for (int i = 1; i < len; ++i)
             tmp += num[i];
-        ans = num[0] * 10 + tmp;
+            ans = num[0] * 10 + tmp;
     }
 
     return ans;
